@@ -4,4 +4,5 @@
 	<string name="All_Entries">All Entries</string>
 	<string name="Create_Reports">Create Reports</string>
 	<string name="app_name">Labb2Xamarin</string>
+	<string name="This_is_where_you_add">This is where you add entries, of both income and expences kind</string>
 </resources>

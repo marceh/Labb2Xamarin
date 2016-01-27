@@ -937,6 +937,15 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a002f
 			public const int radio = 2131361839;
 			
+			// aapt resource value: 0x7f0a0041
+			public const int radioButton1 = 2131361857;
+			
+			// aapt resource value: 0x7f0a0042
+			public const int radioButton2 = 2131361858;
+			
+			// aapt resource value: 0x7f0a0040
+			public const int radioGroup1 = 2131361856;
+			
 			// aapt resource value: 0x7f0a0032
 			public const int search_badge = 2131361842;
 			
@@ -1159,6 +1168,9 @@ namespace Labb2Xamarin
 			
 			// aapt resource value: 0x7f0b000d
 			public const int New_Entry = 2131427341;
+			
+			// aapt resource value: 0x7f0b0011
+			public const int This_is_where_you_add = 2131427345;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int abc_action_bar_home_description = 2131427329;
