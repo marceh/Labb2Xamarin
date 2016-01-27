@@ -6,6 +6,7 @@ namespace Labb2Xamarin
 	{
 		public BookkeeperManager ()
 		{
+			//should be a singleton!...
 		}
 	}
 }
