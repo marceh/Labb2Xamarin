@@ -11,6 +11,6 @@
 	<string name="Description">Description: </string>
 	<string name="Type">Type: </string>
 	<string name="To_from_account">To/from account: </string>
-	<string name="Total_amount">Total_amount: </string>
+	<string name="Total_amount">Total amount: </string>
 	<string name="Tax">Tax: </string>
 </resources>
