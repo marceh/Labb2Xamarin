@@ -856,6 +856,15 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a0016
 			public const int beginning = 2131361814;
 			
+			// aapt resource value: 0x7f0a003d
+			public const int button1 = 2131361853;
+			
+			// aapt resource value: 0x7f0a003e
+			public const int button2 = 2131361854;
+			
+			// aapt resource value: 0x7f0a003f
+			public const int button3 = 2131361855;
+			
 			// aapt resource value: 0x7f0a002d
 			public const int checkbox = 2131361837;
 			
@@ -909,9 +918,6 @@ namespace Labb2Xamarin
 			
 			// aapt resource value: 0x7f0a0018
 			public const int middle = 2131361816;
-			
-			// aapt resource value: 0x7f0a003c
-			public const int myButton = 2131361852;
 			
 			// aapt resource value: 0x7f0a0012
 			public const int never = 2131361810;
@@ -981,6 +987,9 @@ namespace Labb2Xamarin
 			
 			// aapt resource value: 0x7f0a0008
 			public const int tabMode = 2131361800;
+			
+			// aapt resource value: 0x7f0a003c
+			public const int textView1 = 2131361852;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int title = 2131361835;
@@ -1099,10 +1108,19 @@ namespace Labb2Xamarin
 			public const int abc_simple_decor = 2130968599;
 			
 			// aapt resource value: 0x7f040018
-			public const int Main = 2130968600;
+			public const int AllEntries = 2130968600;
 			
 			// aapt resource value: 0x7f040019
-			public const int support_simple_spinner_dropdown_item = 2130968601;
+			public const int CreateReports = 2130968601;
+			
+			// aapt resource value: 0x7f04001a
+			public const int Main = 2130968602;
+			
+			// aapt resource value: 0x7f04001b
+			public const int NewEntry = 2130968603;
+			
+			// aapt resource value: 0x7f04001c
+			public const int support_simple_spinner_dropdown_item = 2130968604;
 			
 			static Layout()
 			{
@@ -1132,6 +1150,15 @@ namespace Labb2Xamarin
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f0b000e
+			public const int All_Entries = 2131427342;
+			
+			// aapt resource value: 0x7f0b000f
+			public const int Create_Reports = 2131427343;
+			
+			// aapt resource value: 0x7f0b000d
+			public const int New_Entry = 2131427341;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int abc_action_bar_home_description = 2131427329;
@@ -1172,11 +1199,8 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0b000b
 			public const int abc_shareactionprovider_share_with_application = 2131427339;
 			
-			// aapt resource value: 0x7f0b000e
-			public const int app_name = 2131427342;
-			
-			// aapt resource value: 0x7f0b000d
-			public const int hello = 2131427341;
+			// aapt resource value: 0x7f0b0010
+			public const int app_name = 2131427344;
 			
 			static String()
 			{

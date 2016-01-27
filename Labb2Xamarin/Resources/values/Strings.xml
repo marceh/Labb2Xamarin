@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
+	<string name="New_Entry">New Entry</string>
+	<string name="All_Entries">All Entries</string>
+	<string name="Create_Reports">Create Reports</string>
 	<string name="app_name">Labb2Xamarin</string>
 </resources>
