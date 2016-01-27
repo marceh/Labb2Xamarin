@@ -27,6 +27,7 @@ namespace Labb2Xamarin
 
 
 
+
 		private BookkeeperManager(){/*should be a singleton!...*/}
 
 		public static BookkeeperManager GetInstance() 
