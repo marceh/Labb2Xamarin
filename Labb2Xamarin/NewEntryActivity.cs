@@ -15,7 +15,6 @@ namespace Labb2Xamarin
 
 			BookkeeperManager bkManager = BookkeeperManager.GetInstance ();
 
-
 		}
 	}
 }

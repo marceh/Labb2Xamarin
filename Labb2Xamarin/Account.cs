@@ -14,6 +14,16 @@ namespace Labb2Xamarin
 			Name = name;
 			Number = number;
 		}
+
+		/// <summary>
+		/// A ToString method, with number first and name of the account after...
+		/// </summary>
+		/// <returns>A string perfect for display in spinners...</returns>
+		public string ToString()
+		{
+			
+			return "(" + Number + ") - " + Name + ".";
+		}
 	}
 }
 

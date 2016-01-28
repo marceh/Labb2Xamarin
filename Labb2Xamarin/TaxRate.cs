@@ -10,6 +10,11 @@ namespace Labb2Xamarin
 		{
 			Tax = tax;
 		}
+
+		public string ToString()
+		{
+			return ""+(int)(Tax*100)+"%";
+		}
 	}
 }
 
