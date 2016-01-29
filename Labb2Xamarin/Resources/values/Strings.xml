@@ -7,10 +7,14 @@
 	<string name="This_is_where_you_add">This is where you add entries, of both income and expences kind</string>
 	<string name="Income">Income</string>
 	<string name="Spending">Spending</string>
-	<string name="Date">Date: </string>
-	<string name="Description">Description: </string>
-	<string name="Type">Type: </string>
-	<string name="To_from_account">To/from account: </string>
-	<string name="Total_amount">Total amount: </string>
-	<string name="Tax">Tax: </string>
+	<string name="Date">Enter date: YYYY-MM-DD </string>
+	<string name="Description">Enter description here: </string>
+	<string name="Type">Choose account: </string>
+	<string name="To_from_account">Choose account: </string>
+	<string name="Total_amount">Enter total amount: XXXX.XX </string>
+	<string name="Tax">Choose tax rate: </string>
+	<string name="Choose_type">Choose account</string>
+	<string name="Choose_money_account">Choose money account</string>
+	<string name="Choose_tax_rate">Choose tax rate</string>
+
 </resources>

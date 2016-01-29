@@ -8,10 +8,10 @@ namespace Labb2Xamarin
 	public class BookkeeperManager 
 	{
 		private static BookkeeperManager bookkeeperManager = null;
-		private List<Account> incomeAccounts;
-		private List<Account> expenseAccounts;
-		private List<Account> moneyAccounts;
-		private List<TaxRate> taxRates;
+		private List<string> incomeAccounts;
+		private List<string> expenseAccounts;
+		private List<string> moneyAccounts;
+		private List<string> taxRates;
 		private List<Entry> entries;
 
 
@@ -38,17 +38,18 @@ namespace Labb2Xamarin
 		{
 			if (null == bookkeeperManager) {
 				bookkeeperManager = new BookkeeperManager();
+				bookkeeperManager.initiateLists ();
 			}
 			return bookkeeperManager;
 		}
 
-		public void initiateLists()
+		private void initiateLists()
 		{
 			//TODO Must check if database is empty, create... else fetch...
 			incomeAccounts = GetListFromDB ("income");
-			incomeAccounts = GetListFromDB ("expense");
-			incomeAccounts = GetListFromDB ("money");
-			taxRates = new List<TaxRate>{new TaxRate(0.06), new TaxRate(0.12), new TaxRate(0.25) };
+			expenseAccounts = GetListFromDB ("expense");
+			moneyAccounts = GetListFromDB ("money");
+			taxRates = new List<string>{new TaxRate(0.06).ToString (), new TaxRate(0.12).ToString (), new TaxRate(0.25).ToString () };
 			entries = new List<Entry>{ };
 		}
 
@@ -57,31 +58,31 @@ namespace Labb2Xamarin
 		/// </summary>
 		/// <returns>The list from Database</returns>
 		/// <param name="typeOfAccount">Specifies which acoounts that are fetched</param>
-		private List<Account> GetListFromDB (string typeOfAccount)
+		private List<string> GetListFromDB (string typeOfAccount)
 		{
 			//This should create lists from DB SQLite, using temp for now...
 			if (typeOfAccount.Equals ("income")) {
-				return new List<Account> 
+				return new List<string> 
 				{
-					new Account ("Sales", 3000),
-					new Account ("Securities, yield", 3670)
+					new Account ("Sales", 3000).ToString (),
+					new Account ("Securities, yield", 3670).ToString ()
 				};
 			} else if (typeOfAccount.Equals ("expense")) {
-				return new List<Account> 
+				return new List<string> 
 				{
-					new Account ("Goods purchases", 4000),
-					new Account ("Office supplies", 6010),
-					new Account ("Salaries", 7010)
+					new Account ("Goods purchases", 4000).ToString (),
+					new Account ("Office supplies", 6010).ToString (),
+					new Account ("Salaries", 7010).ToString ()
 				};
 			} else if (typeOfAccount.Equals ("money")) {
-				return new List<Account> 
+				return new List<string> 
 				{
-					new Account ("Bank account", 1930),
-					new Account ("Cash", 1910)
+					new Account ("Bank account", 1930).ToString (),
+					new Account ("Cash", 1910).ToString ()
 				};
 			} else {
 				Console.WriteLine ("Could not find list");
-				return new List<Account>{ };
+				return new List<string>{ };
 			}
 		}
 
@@ -91,8 +92,31 @@ namespace Labb2Xamarin
 		/// <param name="entry">The new Entry that is collected in newEntryActivity and is added to the list.</param>
 		public void AddEntry(Entry entry)
 		{
-
+			entries.Add (entry);
 		}
+
+		public List<string> getIncomeAccounts()
+		{
+			return incomeAccounts;
+		}
+
+		public List<string> getExpenseAccounts()
+		{
+			return expenseAccounts;
+		}
+
+		public List<string> getMoneyAccounts()
+		{
+			return moneyAccounts;
+		}
+
+		public List<string> getTaxRates()
+		{
+			return taxRates;
+		}
+
+
+
 
 
 

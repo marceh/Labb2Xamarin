@@ -865,8 +865,8 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a003f
 			public const int button3 = 2131361855;
 			
-			// aapt resource value: 0x7f0a0050
-			public const int buttonAddEntry = 2131361872;
+			// aapt resource value: 0x7f0a004d
+			public const int buttonAddEntry = 2131361869;
 			
 			// aapt resource value: 0x7f0a002d
 			public const int checkbox = 2131361837;
@@ -886,14 +886,14 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a0015
 			public const int dropdown = 2131361813;
 			
+			// aapt resource value: 0x7f0a0044
+			public const int editTextDate = 2131361860;
+			
 			// aapt resource value: 0x7f0a0045
-			public const int editTextDate = 2131361861;
+			public const int editTextDesc = 2131361861;
 			
-			// aapt resource value: 0x7f0a0047
-			public const int editTextDesc = 2131361863;
-			
-			// aapt resource value: 0x7f0a004d
-			public const int editTextTotal = 2131361869;
+			// aapt resource value: 0x7f0a0046
+			public const int editTextTotal = 2131361862;
 			
 			// aapt resource value: 0x7f0a0030
 			public const int edit_query = 2131361840;
@@ -1000,14 +1000,14 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a000d
 			public const int showTitle = 2131361805;
 			
-			// aapt resource value: 0x7f0a004b
-			public const int spinnerAccount = 2131361867;
+			// aapt resource value: 0x7f0a004a
+			public const int spinnerAccount = 2131361866;
 			
-			// aapt resource value: 0x7f0a004f
-			public const int spinnerTax = 2131361871;
+			// aapt resource value: 0x7f0a004c
+			public const int spinnerTax = 2131361868;
 			
-			// aapt resource value: 0x7f0a0049
-			public const int spinnerType = 2131361865;
+			// aapt resource value: 0x7f0a0048
+			public const int spinnerType = 2131361864;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int split_action_bar = 2131361822;
@@ -1021,26 +1021,17 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a003c
 			public const int textView1 = 2131361852;
 			
-			// aapt resource value: 0x7f0a004a
-			public const int textViewAccount = 2131361866;
-			
-			// aapt resource value: 0x7f0a0044
-			public const int textViewDate = 2131361860;
-			
-			// aapt resource value: 0x7f0a0046
-			public const int textViewDesc = 2131361862;
+			// aapt resource value: 0x7f0a0049
+			public const int textViewAccount = 2131361865;
 			
 			// aapt resource value: 0x7f0a0040
 			public const int textViewInfo = 2131361856;
 			
-			// aapt resource value: 0x7f0a004e
-			public const int textViewTax = 2131361870;
+			// aapt resource value: 0x7f0a004b
+			public const int textViewTax = 2131361867;
 			
-			// aapt resource value: 0x7f0a004c
-			public const int textViewTotal = 2131361868;
-			
-			// aapt resource value: 0x7f0a0048
-			public const int textViewType = 2131361864;
+			// aapt resource value: 0x7f0a0047
+			public const int textViewType = 2131361863;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int title = 2131361835;
@@ -1204,6 +1195,15 @@ namespace Labb2Xamarin
 			
 			// aapt resource value: 0x7f0b000e
 			public const int All_Entries = 2131427342;
+			
+			// aapt resource value: 0x7f0b001b
+			public const int Choose_money_account = 2131427355;
+			
+			// aapt resource value: 0x7f0b001c
+			public const int Choose_tax_rate = 2131427356;
+			
+			// aapt resource value: 0x7f0b001a
+			public const int Choose_type = 2131427354;
 			
 			// aapt resource value: 0x7f0b000f
 			public const int Create_Reports = 2131427343;
