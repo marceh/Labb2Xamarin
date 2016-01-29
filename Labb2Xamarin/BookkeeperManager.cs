@@ -14,16 +14,17 @@ namespace Labb2Xamarin
 		private List<string> taxRates;
 		private List<Entry> entries;
 
-
-
-
-
-
-
-
-
-
-
+		//TODO make these private with properties...
+		public Account sales = new Account ("Sales", 3000);
+		public Account securities = new Account ("Securities, yield", 3670);
+		public Account goodsPurchases = new Account ("Goods purchases", 4000);
+		public Account officeSupplies = new Account ("Office supplies", 6010);
+		public Account salaries = new Account ("Salaries", 7010);
+		public Account bankAccount = new Account ("Bank account", 1930);
+		public Account cash = new Account ("Cash", 1910);
+		public TaxRate six = new TaxRate (0.06);
+		public TaxRate twelve = new TaxRate (0.12);
+		public TaxRate twentyfive = new TaxRate (0.25);
 
 		/// <summary>
 		/// Since private constructor we are not able to create a new instance of the class...
@@ -49,7 +50,7 @@ namespace Labb2Xamarin
 			incomeAccounts = GetListFromDB ("income");
 			expenseAccounts = GetListFromDB ("expense");
 			moneyAccounts = GetListFromDB ("money");
-			taxRates = new List<string>{new TaxRate(0.06).ToString (), new TaxRate(0.12).ToString (), new TaxRate(0.25).ToString () };
+			taxRates = new List<string>{six.ToString (), twelve.ToString (), twentyfive.ToString () };
 			entries = new List<Entry>{ };
 		}
 
@@ -64,21 +65,21 @@ namespace Labb2Xamarin
 			if (typeOfAccount.Equals ("income")) {
 				return new List<string> 
 				{
-					new Account ("Sales", 3000).ToString (),
-					new Account ("Securities, yield", 3670).ToString ()
+					sales.ToString (),
+					securities.ToString ()
 				};
 			} else if (typeOfAccount.Equals ("expense")) {
 				return new List<string> 
 				{
-					new Account ("Goods purchases", 4000).ToString (),
-					new Account ("Office supplies", 6010).ToString (),
-					new Account ("Salaries", 7010).ToString ()
+					goodsPurchases.ToString (),
+					officeSupplies.ToString (),
+					salaries.ToString ()
 				};
 			} else if (typeOfAccount.Equals ("money")) {
 				return new List<string> 
 				{
-					new Account ("Bank account", 1930).ToString (),
-					new Account ("Cash", 1910).ToString ()
+					bankAccount.ToString (),
+					cash.ToString ()
 				};
 			} else {
 				Console.WriteLine ("Could not find list");
