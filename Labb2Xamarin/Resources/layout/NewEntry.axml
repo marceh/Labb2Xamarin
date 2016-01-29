@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/spinnerType"
             android:prompt="@string/Choose_type"
-            android:layout_weight="1" />
+            android:layout_weight=".85" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/spinnerAccount"
             android:prompt="@string/Choose_money_account"
-            android:layout_weight="1" />
+            android:layout_weight=".85" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -111,10 +111,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/spinnerTax"
             android:prompt="@string/Choose_tax_rate"
-            android:layout_weight="1" />
+            android:layout_weight=".85" />
     </LinearLayout>
     <Button
-        android:text="Button"
+        android:text="@string/Add_entry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonAddEntry" />

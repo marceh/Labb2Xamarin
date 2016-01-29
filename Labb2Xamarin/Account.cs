@@ -19,10 +19,9 @@ namespace Labb2Xamarin
 		/// A ToString method, with number first and name of the account after...
 		/// </summary>
 		/// <returns>A string perfect for display in spinners...</returns>
-		public string ToString()
+		public override string ToString()
 		{
-			
-			return "(" + Number + ") - " + Name + ".";
+			return "(" + Number + ") - " + Name;
 		}
 	}
 }

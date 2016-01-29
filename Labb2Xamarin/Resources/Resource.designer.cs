@@ -1193,6 +1193,9 @@ namespace Labb2Xamarin
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f0b001d
+			public const int Add_entry = 2131427357;
+			
 			// aapt resource value: 0x7f0b000e
 			public const int All_Entries = 2131427342;
 			

@@ -4,7 +4,7 @@
 	<string name="All_Entries">All Entries</string>
 	<string name="Create_Reports">Create Reports</string>
 	<string name="app_name">Labb2Xamarin</string>
-	<string name="This_is_where_you_add">This is where you add entries, of both income and expences kind</string>
+	<string name="This_is_where_you_add">This is where you add entries, of both income and expenses kind</string>
 	<string name="Income">Income</string>
 	<string name="Spending">Spending</string>
 	<string name="Date">Enter date: YYYY-MM-DD </string>
@@ -16,5 +16,6 @@
 	<string name="Choose_type">Choose account</string>
 	<string name="Choose_money_account">Choose money account</string>
 	<string name="Choose_tax_rate">Choose tax rate</string>
+	<string name="Add_entry">Add entry</string>
 
 </resources>
