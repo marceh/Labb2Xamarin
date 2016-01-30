@@ -24,5 +24,10 @@ namespace Labb2Xamarin
 			MoneyAccount = moneyAccount;
 			TaxRate = taxRate;
 		}
+
+		public string ToString()
+		{
+			return "isIncome: " + IsIncome + ", date: " + Date + " description: " + Description + " totalAmount: " + TotalAmount + " typeAccount: " + TypeAccount.ToString () + " moneyAccount: " + MoneyAccount.ToString () + " taxRate: " + TaxRate.ToString ();
+		}
 	}
 }

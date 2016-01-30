@@ -17,5 +17,5 @@
 	<string name="Choose_money_account">Choose money account</string>
 	<string name="Choose_tax_rate">Choose tax rate</string>
 	<string name="Add_entry">Add entry</string>
-
+	<string name="Info_all_entries">All entries are displayed beneath</string>
 </resources>

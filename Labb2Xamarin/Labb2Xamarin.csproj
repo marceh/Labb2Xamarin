@@ -63,6 +63,7 @@
     <Compile Include="TaxRate.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="BookkeeperManager.cs" />
+    <Compile Include="MyAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -80,6 +81,7 @@
     <AndroidResource Include="Resources\layout\AllEntries.axml" />
     <AndroidResource Include="Resources\layout\NewEntry.axml" />
     <AndroidResource Include="Resources\layout\CreateReports.axml" />
+    <AndroidResource Include="Resources\layout\EntryLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

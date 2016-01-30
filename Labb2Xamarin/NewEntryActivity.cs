@@ -91,7 +91,9 @@ namespace Labb2Xamarin
 		{
 			Entry createdEntry = new Entry (TheIncome (), TheDate (), TheDescription (), TheTotalAmount (), TheAccount("type"), TheAccount("money"), TheTaxRate ());
 			Toast.MakeText (this, "Entry created!", ToastLength.Short).Show ();
+			Console.WriteLine (createdEntry.ToString ());   
 			bkManager.AddEntry (createdEntry);
+			Console.WriteLine (bkManager.ToString ());
 			//TODO ResetMenu ();
 		}
 
@@ -115,8 +117,6 @@ namespace Labb2Xamarin
 		{
 			string tempText = editTextTotal.Text;
 			string tempText2 = "";
-			Console.WriteLine(tempText);
-			Console.WriteLine ("längd: "+tempText.Length);
 			for (int i = 0; i < tempText.Length; i++) {
 				if (tempText[i].Equals ('.')) {
 					//when fetching from editText, the dot in double cannot be read but the comma can...Weird!...

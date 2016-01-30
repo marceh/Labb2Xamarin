@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Android.Widget;
 using Android.Content;
+using System.Linq;
 
 namespace Labb2Xamarin
 {
@@ -29,7 +30,9 @@ namespace Labb2Xamarin
 		/// <summary>
 		/// Since private constructor we are not able to create a new instance of the class...
 		/// </summary>
-		private BookkeeperManager(){/*should be a singleton!...*/}
+		private BookkeeperManager(){
+			initiateLists ();
+		}
 
 		/// <summary>
 		/// Returns the ONLY instance of the class, if null. we initate the ONLY instance.
@@ -39,7 +42,6 @@ namespace Labb2Xamarin
 		{
 			if (null == bookkeeperManager) {
 				bookkeeperManager = new BookkeeperManager();
-				bookkeeperManager.initiateLists ();
 			}
 			return bookkeeperManager;
 		}
@@ -93,7 +95,7 @@ namespace Labb2Xamarin
 		/// <param name="entry">The new Entry that is collected in newEntryActivity and is added to the list.</param>
 		public void AddEntry(Entry entry)
 		{
-			entries.Add (entry);
+			entries.Add(entry);
 		}
 
 		public List<string> getIncomeAccounts()
@@ -116,7 +118,21 @@ namespace Labb2Xamarin
 			return taxRates;
 		}
 
+		public List<Entry> getEntries()
+		{
+			return entries;
+		}
 
+		public string ToString()
+		{
+			string tempString = "";
+			for (int i = 0; i < entries.Count; i++) {
+				tempString += "[";
+				tempString += entries [i].ToString ();
+				tempString += "]   ";
+			}
+			return tempString;
+		}
 
 
 

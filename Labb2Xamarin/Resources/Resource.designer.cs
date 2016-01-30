@@ -856,17 +856,17 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a0016
 			public const int beginning = 2131361814;
 			
-			// aapt resource value: 0x7f0a003d
-			public const int button1 = 2131361853;
+			// aapt resource value: 0x7f0a0042
+			public const int button1 = 2131361858;
 			
-			// aapt resource value: 0x7f0a003e
-			public const int button2 = 2131361854;
+			// aapt resource value: 0x7f0a0043
+			public const int button2 = 2131361859;
 			
-			// aapt resource value: 0x7f0a003f
-			public const int button3 = 2131361855;
+			// aapt resource value: 0x7f0a0044
+			public const int button3 = 2131361860;
 			
-			// aapt resource value: 0x7f0a004d
-			public const int buttonAddEntry = 2131361869;
+			// aapt resource value: 0x7f0a0052
+			public const int buttonAddEntry = 2131361874;
 			
 			// aapt resource value: 0x7f0a002d
 			public const int checkbox = 2131361837;
@@ -886,14 +886,14 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a0015
 			public const int dropdown = 2131361813;
 			
-			// aapt resource value: 0x7f0a0044
-			public const int editTextDate = 2131361860;
+			// aapt resource value: 0x7f0a0049
+			public const int editTextDate = 2131361865;
 			
-			// aapt resource value: 0x7f0a0045
-			public const int editTextDesc = 2131361861;
+			// aapt resource value: 0x7f0a004a
+			public const int editTextDesc = 2131361866;
 			
-			// aapt resource value: 0x7f0a0046
-			public const int editTextTotal = 2131361862;
+			// aapt resource value: 0x7f0a004b
+			public const int editTextTotal = 2131361867;
 			
 			// aapt resource value: 0x7f0a0030
 			public const int edit_query = 2131361840;
@@ -925,6 +925,9 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a0006
 			public const int listMode = 2131361798;
 			
+			// aapt resource value: 0x7f0a003d
+			public const int listViewAllEntries = 2131361853;
+			
 			// aapt resource value: 0x7f0a0029
 			public const int list_item = 2131361833;
 			
@@ -949,14 +952,14 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a002f
 			public const int radio = 2131361839;
 			
-			// aapt resource value: 0x7f0a0043
-			public const int radioButtonExpences = 2131361859;
+			// aapt resource value: 0x7f0a0048
+			public const int radioButtonExpences = 2131361864;
 			
-			// aapt resource value: 0x7f0a0042
-			public const int radioButtonIncome = 2131361858;
+			// aapt resource value: 0x7f0a0047
+			public const int radioButtonIncome = 2131361863;
 			
-			// aapt resource value: 0x7f0a0041
-			public const int radioGroupIncomeExpences = 2131361857;
+			// aapt resource value: 0x7f0a0046
+			public const int radioGroupIncomeExpences = 2131361862;
 			
 			// aapt resource value: 0x7f0a0032
 			public const int search_badge = 2131361842;
@@ -1000,14 +1003,14 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a000d
 			public const int showTitle = 2131361805;
 			
-			// aapt resource value: 0x7f0a004a
-			public const int spinnerAccount = 2131361866;
+			// aapt resource value: 0x7f0a004f
+			public const int spinnerAccount = 2131361871;
 			
-			// aapt resource value: 0x7f0a004c
-			public const int spinnerTax = 2131361868;
+			// aapt resource value: 0x7f0a0051
+			public const int spinnerTax = 2131361873;
 			
-			// aapt resource value: 0x7f0a0048
-			public const int spinnerType = 2131361864;
+			// aapt resource value: 0x7f0a004d
+			public const int spinnerType = 2131361869;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int split_action_bar = 2131361822;
@@ -1018,20 +1021,32 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0a0008
 			public const int tabMode = 2131361800;
 			
-			// aapt resource value: 0x7f0a003c
-			public const int textView1 = 2131361852;
+			// aapt resource value: 0x7f0a003e
+			public const int textView1 = 2131361854;
 			
-			// aapt resource value: 0x7f0a0049
-			public const int textViewAccount = 2131361865;
+			// aapt resource value: 0x7f0a004e
+			public const int textViewAccount = 2131361870;
+			
+			// aapt resource value: 0x7f0a003f
+			public const int textViewEntryDate = 2131361855;
 			
 			// aapt resource value: 0x7f0a0040
-			public const int textViewInfo = 2131361856;
+			public const int textViewEntryDesc = 2131361856;
 			
-			// aapt resource value: 0x7f0a004b
-			public const int textViewTax = 2131361867;
+			// aapt resource value: 0x7f0a0041
+			public const int textViewEntryTotal = 2131361857;
 			
-			// aapt resource value: 0x7f0a0047
-			public const int textViewType = 2131361863;
+			// aapt resource value: 0x7f0a0045
+			public const int textViewInfo = 2131361861;
+			
+			// aapt resource value: 0x7f0a003c
+			public const int textViewInfoAllEntries = 2131361852;
+			
+			// aapt resource value: 0x7f0a0050
+			public const int textViewTax = 2131361872;
+			
+			// aapt resource value: 0x7f0a004c
+			public const int textViewType = 2131361868;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int title = 2131361835;
@@ -1156,13 +1171,16 @@ namespace Labb2Xamarin
 			public const int CreateReports = 2130968601;
 			
 			// aapt resource value: 0x7f04001a
-			public const int Main = 2130968602;
+			public const int EntryLayout = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int NewEntry = 2130968603;
+			public const int Main = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int support_simple_spinner_dropdown_item = 2130968604;
+			public const int NewEntry = 2130968604;
+			
+			// aapt resource value: 0x7f04001d
+			public const int support_simple_spinner_dropdown_item = 2130968605;
 			
 			static Layout()
 			{
@@ -1219,6 +1237,9 @@ namespace Labb2Xamarin
 			
 			// aapt resource value: 0x7f0b0012
 			public const int Income = 2131427346;
+			
+			// aapt resource value: 0x7f0b001e
+			public const int Info_all_entries = 2131427358;
 			
 			// aapt resource value: 0x7f0b000d
 			public const int New_Entry = 2131427341;
