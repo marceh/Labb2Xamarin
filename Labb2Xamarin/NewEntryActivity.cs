@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using System;
+using System.Globalization;
 
 namespace Labb2Xamarin
 {
@@ -113,8 +114,15 @@ namespace Labb2Xamarin
 		}
 
 		//TODO understand how the f*ck this works...
-		private double TheTotalAmount()
-		{
+		private double TheTotalAmount() {
+	
+			string tempText = editTextTotal.Text;
+			double doubleTemp = double.Parse (tempText, CultureInfo.InvariantCulture);
+			return doubleTemp;
+
+		}
+
+/*		{
 			string tempText = editTextTotal.Text;
 			string tempText2 = "";
 			for (int i = 0; i < tempText.Length; i++) {
@@ -128,17 +136,20 @@ namespace Labb2Xamarin
 			double tempDouble = Convert.ToDouble (tempText2);
 			return tempDouble;	
 		}
-
+*/
 		private Account TheAccount(string kindOfAccount)
 		{
 			string tempText;
 			string number = "";
 			if (kindOfAccount.Equals ("type")) 
 			{
+				Console.WriteLine ("Inne i type");
 				tempText = spinnerType.SelectedItem.ToString ();
-				for (int i = 1; i < 4; i++) {
+				for (int i = 1; i < 5; i++) {
 					number += tempText [i];
 				}
+				Console.WriteLine ("tempText: "+tempText);
+				Console.WriteLine ("number: "+number);
 
 				if (number.Equals ("3000")) {
 					return bkManager.sales;
@@ -154,11 +165,13 @@ namespace Labb2Xamarin
 					return new Account ("NoName", 0000);
 				}
 			} else {
-					
+				Console.WriteLine ("Inne i money");	
 				tempText = spinnerAccount.SelectedItem.ToString();
-				for (int i = 1; i < 4; i++) {
+				for (int i = 1; i < 5; i++) {
 					number += tempText [i];
 				}
+				Console.WriteLine ("tempText: "+tempText);
+				Console.WriteLine ("number: "+number);
 
 				if (number.Equals ("1930")) {
 					return bkManager.bankAccount;

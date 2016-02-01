@@ -20,7 +20,7 @@ namespace Labb2Xamarin
 
 		public override Java.Lang.Object GetItem (int position)
 		{
-			return null;
+			return new JavaObjectWrapper (){ obj = entries [position] };
 		}
 
 		public override long GetItemId (int position)
@@ -31,7 +31,7 @@ namespace Labb2Xamarin
 		public override View GetView (int position, View convertView, ViewGroup parent)
 		{
 			if (convertView == null) {
-				activity.LayoutInflater.Inflate (Resource.Layout.EntryLayout,parent, false);
+				convertView = activity.LayoutInflater.Inflate (Resource.Layout.EntryLayout,parent, false);
 			}
 
 			TextView textViewDate = convertView.FindViewById<TextView> (Resource.Id.textViewEntryDate);
