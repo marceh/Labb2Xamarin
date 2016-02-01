@@ -1,9 +1,11 @@
 ﻿using System;
+using SQLite;
 
 namespace Labb2Xamarin
 {
 	public class TaxRate
 	{
+		[PrimaryKey]
 		public double Tax{ get; private set;}
 
 		public TaxRate (double tax)
@@ -11,7 +13,7 @@ namespace Labb2Xamarin
 			Tax = tax;
 		}
 
-		public string ToString()
+		public override string ToString()
 		{
 			return ""+(int)(Tax*100)+"%";
 		}

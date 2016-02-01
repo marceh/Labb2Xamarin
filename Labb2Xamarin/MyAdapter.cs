@@ -20,7 +20,7 @@ namespace Labb2Xamarin
 
 		public override Java.Lang.Object GetItem (int position)
 		{
-			return new JavaObjectWrapper (){ obj = entries [position] };
+			return null;
 		}
 
 		public override long GetItemId (int position)

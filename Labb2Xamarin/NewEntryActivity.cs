@@ -90,7 +90,15 @@ namespace Labb2Xamarin
 
 		private void CreateEntry()
 		{
-			Entry createdEntry = new Entry (TheIncome (), TheDate (), TheDescription (), TheTotalAmount (), TheAccount("type"), TheAccount("money"), TheTaxRate ());
+			Entry createdEntry = new Entry (/*TheIncome (), TheDate (), TheDescription (), TheTotalAmount (), TheAccount("type"), TheAccount("money"), TheTaxRate ()*/);
+			createdEntry.IsIncome = TheIncome ();
+			createdEntry.Date = TheDate ();
+			createdEntry.Description = TheDescription ();
+			createdEntry.TotalAmount = TheTotalAmount ();
+			createdEntry.TypeAccount = TheAccount ("type");
+			createdEntry.MoneyAccount = TheAccount ("money");
+			createdEntry.TaxRate = TheTaxRate ();
+
 			Toast.MakeText (this, "Entry created!", ToastLength.Short).Show ();
 			Console.WriteLine (createdEntry.ToString ());   
 			bkManager.AddEntry (createdEntry);

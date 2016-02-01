@@ -1,18 +1,17 @@
 ﻿using System;
+using SQLite;
 
 namespace Labb2Xamarin
 {
 	public class Account
 	{
-		public string Name{ get; private set;}
+
+		[PrimaryKey]
 		public int Number{ get; private set;}
+		public string Name{ get; private set;}
 
-
-
-		public Account (string name, int number)
+		public Account ()
 		{
-			Name = name;
-			Number = number;
 		}
 
 		/// <summary>
