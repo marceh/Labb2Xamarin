@@ -20,7 +20,7 @@ namespace Labb2Xamarin
 		SQLiteConnection db;
 
 		//TODO make these private with properties...
-		public Account sales = new Account ("Sales", 3000);
+/*		public Account sales = new Account ("Sales", 3000);
 		public Account securities = new Account ("Securities, yield", 3670);
 		public Account goodsPurchases = new Account ("Goods purchases", 4000);
 		public Account officeSupplies = new Account ("Office supplies", 6010);
@@ -30,7 +30,7 @@ namespace Labb2Xamarin
 		public TaxRate six = new TaxRate (0.06);
 		public TaxRate twelve = new TaxRate (0.12);
 		public TaxRate twentyfive = new TaxRate (0.25);
-
+*/
 
 		/// <summary>
 		/// Since private constructor we are not able to create a new instance of the class...
@@ -151,16 +151,14 @@ namespace Labb2Xamarin
 
 		private void CreateTheAccountTable ()
 		{
-			public Account sales = new Account ("Sales", 3000);
-			public Account securities = new Account ("Securities, yield", 3670);
-			public Account goodsPurchases = new Account ("Goods purchases", 4000);
-			public Account officeSupplies = new Account ("Office supplies", 6010);
-			public Account salaries = new Account ("Salaries", 7010);
-			public Account bankAccount = new Account ("Bank account", 1930);
-			public Account cash = new Account ("Cash", 1910);
-			public TaxRate six = new TaxRate (0.06);
-			public TaxRate twelve = new TaxRate (0.12);
-			public TaxRate twentyfive = new TaxRate (0.25);
+			Account sales = new Account {Name="Sales", Number=3000};
+			Account securities = new Account {Name="Securities, yield", Number=3670};
+			Account goodsPurchases = new Account {Name="Goods purchases", Number=4000};
+			Account officeSupplies = new Account {Name="Office supplies", Number=6010};
+			Account salaries = new Account {Name="Salaries", Number=7010};
+			Account bankAccount = new Account {Name="Bank account", Number=1930};
+			Account cash = new Account {Name="Cash", Number=1910};
+
 
 
 
@@ -168,7 +166,9 @@ namespace Labb2Xamarin
 
 		private void CreateTheTaxRateTable ()
 		{
-
+			TaxRate six = new TaxRate {Tax=0.06};
+			TaxRate twelve = new TaxRate {Tax=0.12};
+			TaxRate twentyfive = new TaxRate {Tax=0.25};
 
 		}
 
