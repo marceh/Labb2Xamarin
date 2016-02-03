@@ -7,8 +7,8 @@ namespace Labb2Xamarin
 	{
 
 		[PrimaryKey]
-		public int Number{ get; private set;}
-		public string Name{ get; private set;}
+		public int Number{ get; set;}
+		public string Name{ get; set;}
 
 		public Account ()
 		{

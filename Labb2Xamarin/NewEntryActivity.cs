@@ -145,7 +145,7 @@ namespace Labb2Xamarin
 			return tempDouble;	
 		}
 */
-		private Account TheAccount(string kindOfAccount)
+		private int TheAccount(string kindOfAccount)
 		{
 			string tempText;
 			string number = "";
@@ -160,17 +160,17 @@ namespace Labb2Xamarin
 				Console.WriteLine ("number: "+number);
 
 				if (number.Equals ("3000")) {
-					return bkManager.sales;
+					return 3000;
 				} else if (number.Equals ("3670")) {
-					return bkManager.securities;
+					return 3670;
 				} else if (number.Equals ("4000")) {
-					return bkManager.goodsPurchases;
+					return 4000;
 				} else if (number.Equals ("6010")) {
-					return bkManager.officeSupplies;
+					return 6010;
 				} else if (number.Equals ("7010")) {
-					return bkManager.salaries;
+					return 7010;
 				} else {
-					return new Account ("NoName", 0000);
+					return 0000;
 				}
 			} else {
 				Console.WriteLine ("Inne i money");	
@@ -182,25 +182,25 @@ namespace Labb2Xamarin
 				Console.WriteLine ("number: "+number);
 
 				if (number.Equals ("1930")) {
-					return bkManager.bankAccount;
+					return 1930;
 				} else if (number.Equals ("1910")) {
-					return bkManager.cash;
+					return 1910;
 				} else {
-					return new Account ("NoName", 0000);
+					return 0000;
 				}
 			}
 		}
 
-		private TaxRate TheTaxRate()
+		private int TheTaxRate()
 		{
 			if (spinnerTax.SelectedItem.ToString()[0].Equals ('6')) {
-				return bkManager.six;
+				return 6;
 			} else if (spinnerTax.SelectedItem.ToString()[0].Equals ('1')) {
-				return bkManager.twelve;
+				return 12;
 			} else if (spinnerTax.SelectedItem.ToString()[0].Equals ('2')) {
-				return bkManager.twentyfive;
+				return 25;
 			} else {
-				return new TaxRate (00.00);
+				return 0;
 			}
 		}
 

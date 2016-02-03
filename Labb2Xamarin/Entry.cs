@@ -14,7 +14,7 @@ namespace Labb2Xamarin
 		public double TotalAmount{ get; set;}
 		public int TypeAccount{ get; set;}
 		public int MoneyAccount{ get; set;}
-		public TaxRate TaxRate{ get; set;}
+		public int TaxRate{ get; set;}
 
 		public Entry (/*bool isIncome, string date, string description, double totalAmount, Account typeAccount, Account moneyAccount, TaxRate taxRate*/)
 		{

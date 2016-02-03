@@ -5,13 +5,11 @@ namespace Labb2Xamarin
 {
 	public class TaxRate
 	{
-		[PrimaryKey]
-		public double Tax{ get; private set;}
+		[PrimaryKey,]
+		public int Id{ get; set;}
+		public double Tax{ get; set;}
 
-		public TaxRate (double tax)
-		{
-			Tax = tax;
-		}
+		public TaxRate (){}
 
 		public override string ToString()
 		{

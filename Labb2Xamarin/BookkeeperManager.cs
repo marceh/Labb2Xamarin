@@ -4,6 +4,9 @@ using Android.Widget;
 using Android.Content;
 using System.Linq;
 using SQLite;
+using System.Runtime.InteropServices;
+using Android.Util;
+using Javax.Xml.Transform.Sax;
 
 namespace Labb2Xamarin
 {
@@ -17,34 +20,37 @@ namespace Labb2Xamarin
 		private List<Entry> entries;
 		private string path = System.Environment.GetFolderPath (System.
 			Environment.SpecialFolder.Personal);
-		SQLiteConnection db;
-
-		//TODO make these private with properties...
-/*		public Account sales = new Account ("Sales", 3000);
-		public Account securities = new Account ("Securities, yield", 3670);
-		public Account goodsPurchases = new Account ("Goods purchases", 4000);
-		public Account officeSupplies = new Account ("Office supplies", 6010);
-		public Account salaries = new Account ("Salaries", 7010);
-		public Account bankAccount = new Account ("Bank account", 1930);
-		public Account cash = new Account ("Cash", 1910);
-		public TaxRate six = new TaxRate (0.06);
-		public TaxRate twelve = new TaxRate (0.12);
-		public TaxRate twentyfive = new TaxRate (0.25);
-*/
+		private SQLiteConnection db;
 
 		/// <summary>
 		/// Since private constructor we are not able to create a new instance of the class...
 		/// </summary>
 		private BookkeeperManager(){
 			db = new SQLiteConnection (path + @"\database.db");
-			//TODO: make sure to check if already created...
-			db.CreateTable<Entry> ();
-			db.CreateTable<Account> ();
-			db.CreateTable<TaxRate> ();
-			CreateTheAccountTable ();
-			CreateTheTaxRateTable ();
+			incomeAccounts = new List<String>();
+			expenseAccounts = new List<String>();
+			moneyAccounts = new List<String>();
+			taxRates = new List<String>();
+			entries = new List<Entry>();
 
-			initiateLists ();
+			Console.WriteLine ("inne i construktor för BKMANAGER");
+			//If the database is empty we fill it with account and taxrates...
+			try {
+				db.Table<Account> ().Count ();
+				Console.WriteLine ("db.Table<Account> ().Count ():    "+db.Table<Account> ().Count ());
+				Console.WriteLine ("db.Table<TaxRate> ().Count ():    "+db.Table<TaxRate> ().Count ());
+				Console.WriteLine ("db.Table<Entry> ().Count ():    "+db.Table<Entry> ().Count ());
+			} catch (SQLiteException e) {
+				Console.WriteLine ("inne i Exception");
+				db.CreateTable<Entry> ();
+				db.CreateTable<Account> ();
+				db.CreateTable<TaxRate> ();
+				CreateTheAccountTable ();
+				CreateTheTaxRateTable ();
+			}
+
+			//The database cannot be empty due to previous try catch statement so now we fetch the database lists into our lists. 
+			GetListFromDB ();
 		}
 
 		/// <summary>
@@ -59,46 +65,31 @@ namespace Labb2Xamarin
 			return bookkeeperManager;
 		}
 
-		private void initiateLists()
-		{
-			//TODO Must check if database is empty, create... else fetch...
-			incomeAccounts = GetListFromDB ("income");
-			expenseAccounts = GetListFromDB ("expense");
-			moneyAccounts = GetListFromDB ("money");
-			taxRates = new List<string>{six.ToString (), twelve.ToString (), twentyfive.ToString () };
-			entries = new List<Entry>{ };
-		}
-
 		/// <summary>
 		/// Gets the lists from Database
 		/// </summary>
 		/// <returns>The list from Database</returns>
 		/// <param name="typeOfAccount">Specifies which acoounts that are fetched</param>
-		private List<string> GetListFromDB (string typeOfAccount)
+		private void GetListFromDB ()
 		{
-			//This should create lists from DB SQLite, using temp for now...
-			if (typeOfAccount.Equals ("income")) {
-				return new List<string> 
-				{
-					sales.ToString (),
-					securities.ToString ()
-				};
-			} else if (typeOfAccount.Equals ("expense")) {
-				return new List<string> 
-				{
-					goodsPurchases.ToString (),
-					officeSupplies.ToString (),
-					salaries.ToString ()
-				};
-			} else if (typeOfAccount.Equals ("money")) {
-				return new List<string> 
-				{
-					bankAccount.ToString (),
-					cash.ToString ()
-				};
-			} else {
-				Console.WriteLine ("Could not find list");
-				return new List<string>{ };
+			foreach (Account x in getIncomeAccounts ()) {
+				incomeAccounts.Add (x.ToString ());
+			}
+
+			foreach (Account x in getExpenseAccounts ()) {
+				expenseAccounts.Add (x.ToString());
+			}
+
+			foreach (Account x in getMoneyAccounts ()) {
+				moneyAccounts.Add (x.ToString ());
+			}
+
+			foreach (TaxRate x in getTaxRates ()) {
+				taxRates.Add (x.ToString ());
+			}
+
+			foreach (Entry x in getEntries ()) {
+				entries.Add (x);
 			}
 		}
 
@@ -112,33 +103,46 @@ namespace Labb2Xamarin
 			//entries.Add(entry);
 		}
 
-		public List<string> getIncomeAccounts()
+		/*
+		 *  In accounting the Account plan is organised after it's number so,
+		 *  I will take advantage of the numbers to specify whether the account is of income, expense or money (asset) type.
+		 * 
+		 * 	Account Class 1 for assets (account number 1000-1999)
+		 *	Account Class 2 for equity and debt (2000-2999)
+		 *	Account Class 3 for revenues (3000-3999)
+		 *	Account Class 4 for material and product costs (4000-4999)
+		 *	Account Class 5 and 6 for other costs (5000-6999)
+		 *	Account Class 7 of staff costs (7000-7999)
+		 *	Account Class 8 Financial income and expenses (8000-8999)
+		 * 
+		 */
+
+		public List<Account> getIncomeAccounts()
 		{
-			return incomeAccounts;
+			return db.Table<Account> ().Where (x => x.Number >= 3000 && x.Number <= 3999).ToList (); ;
 		}
 
-		public List<string> getExpenseAccounts()
+		public List<Account> getExpenseAccounts()
 		{
-			return expenseAccounts;
+			return db.Table<Account> ().Where (x => x.Number >= 4000 && x.Number <= 7999).ToList ();
 		}
 
-		public List<string> getMoneyAccounts()
+		public List<Account> getMoneyAccounts()
 		{
-			return moneyAccounts;
+			return db.Table<Account> ().Where (x => x.Number >= 1000 && x.Number <= 1999).ToList ();
 		}
 
-		public List<string> getTaxRates()
+		public List<TaxRate> getTaxRates()
 		{
-			return taxRates;
+			return db.Table<TaxRate> ().ToList ();
 		}
 
 		public List<Entry> getEntries()
 		{
 			return db.Table<Entry>().ToList();
-			//return entries;
 		}
 
-		public string ToString()
+		public override string ToString()
 		{
 			string tempString = "";
 			for (int i = 0; i < entries.Count; i++) {
@@ -149,32 +153,39 @@ namespace Labb2Xamarin
 			return tempString;
 		}
 
+		/// <summary>
+		/// Creates the account table, only the first time...
+		/// </summary>
 		private void CreateTheAccountTable ()
 		{
-			Account sales = new Account {Name="Sales", Number=3000};
-			Account securities = new Account {Name="Securities, yield", Number=3670};
-			Account goodsPurchases = new Account {Name="Goods purchases", Number=4000};
-			Account officeSupplies = new Account {Name="Office supplies", Number=6010};
-			Account salaries = new Account {Name="Salaries", Number=7010};
-			Account bankAccount = new Account {Name="Bank account", Number=1930};
-			Account cash = new Account {Name="Cash", Number=1910};
 
+			Console.WriteLine ("inne i Create AccountTable");
+			List<Account> tempList = new List<Account>
+			{
+				new Account() {Name="Sales", Number=3000},
+				new Account() {Name="Securities, yield", Number=3670},
+				new Account() {Name="Goods purchases", Number=4000},
+				new Account() {Name="Office supplies", Number=6010},
+				new Account() {Name="Salaries", Number=7010},
+				new Account() {Name="Bank account", Number=1930},
+				new Account() {Name="Cash", Number=1910}
+			};
 
-
-
+			foreach (Account x in tempList) {
+				Console.WriteLine ("element i templist: "+x.ToString ());
+				db.Insert (x);
+			}
 		}
 
+		/// <summary>
+		/// Creates the tax rate table, only the first time...
+		/// </summary>
 		private void CreateTheTaxRateTable ()
 		{
-			TaxRate six = new TaxRate {Tax=0.06};
-			TaxRate twelve = new TaxRate {Tax=0.12};
-			TaxRate twentyfive = new TaxRate {Tax=0.25};
-
+			db.Insert (new TaxRate() {Id=6, Tax=0.06});
+			db.Insert (new TaxRate() {Id=12, Tax=0.12});
+			db.Insert ( new TaxRate() {Id=25, Tax=0.25});
 		}
-
-
-
-
 	}
 }
 
