@@ -11,9 +11,15 @@ namespace Labb2Xamarin
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
-
 			SetContentView (Resource.Layout.CreateReports);
 
+			BookkeeperManager bkManager = BookkeeperManager.GetInstance ();
+
+			Button buttonTaxReport = FindViewById<Button> (Resource.Id.buttonTaxReport);
+
+			buttonTaxReport.Click += delegate {
+				bkManager.sendTaxReport (this);
+			};
 
 		}
 	}

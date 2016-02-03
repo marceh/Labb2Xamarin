@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using Android.Widget;
 using Android.Content;
+using Android.App;
+using Android.OS;
 using System.Linq;
 using SQLite;
 using System.Runtime.InteropServices;
 using Android.Util;
 using Javax.Xml.Transform.Sax;
+using Android.Net;
+using Android.App;
 
 namespace Labb2Xamarin
 {
@@ -186,6 +190,35 @@ namespace Labb2Xamarin
 			db.Insert (new TaxRate() {Id=12, Tax=0.12});
 			db.Insert ( new TaxRate() {Id=25, Tax=0.25});
 		}
+
+		public void sendTaxReport(Context context)
+		{
+			var email = new Intent (Android.Content.Intent.ActionSend);
+			email.PutExtra (Android.Content.Intent.ExtraSubject, "Tax Report");
+			email.PutExtra (Android.Content.Intent.ExtraText, CreateTaxReportString ());
+			email.SetType ("message/rfc822");
+			context.StartActivity (email);
+		}
+
+		private string CreateTaxReportString ()
+		{
+			List<Entry> tempList = getEntries (); 
+			string tempString = "";
+			double tempDouble = 0.00;
+
+			foreach (Entry x in tempList) {
+				tempString += x.EntryTaxDetails ()+"\n";
+				if (x.IsIncome) {
+					tempDouble += (Math.Round(x.TotalAmount-(x.TotalAmount/x.TaxRate),	2));
+				} else {
+					tempDouble -= (Math.Round(x.TotalAmount-(x.TotalAmount/x.TaxRate),	2));	
+				}
+			}
+			tempString += "Total amount to pay: $" + tempDouble;
+			Console.WriteLine (tempString);
+			return tempString;
+		}
+
 	}
 }
 

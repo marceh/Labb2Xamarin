@@ -1,6 +1,8 @@
 ﻿using System;
 using Java.Sql;
 using SQLite;
+using Java.Util;
+using Android.Content;
 
 namespace Labb2Xamarin
 {
@@ -31,6 +33,18 @@ namespace Labb2Xamarin
 		public override string ToString()
 		{
 			return "isIncome: " + IsIncome + ", date: " + Date + " description: " + Description + " totalAmount: " + TotalAmount + " typeAccount: " + TypeAccount.ToString () + " moneyAccount: " + MoneyAccount.ToString () + " taxRate: " + TaxRate.ToString ();
+		}
+
+		public string EntryTaxDetails()
+		{
+			string tempString = Date+": "+Description+", ";
+			if (IsIncome) {
+				tempString += "+";
+			} else {
+				tempString += "-";
+			}
+			tempString += "$"+(Math.Round(TotalAmount-(TotalAmount/TaxRate),	2));
+			return tempString;
 		}
 	}
 }

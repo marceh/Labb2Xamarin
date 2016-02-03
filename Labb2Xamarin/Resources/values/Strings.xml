@@ -18,4 +18,7 @@
 	<string name="Choose_tax_rate">Choose tax rate</string>
 	<string name="Add_entry">Add entry</string>
 	<string name="Info_all_entries">All entries are displayed beneath</string>
+	<string name="create_tax_report">Create tax report</string>
+	<string name="currency">kr</string>
+
 </resources>
