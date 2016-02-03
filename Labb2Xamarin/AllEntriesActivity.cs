@@ -16,13 +16,10 @@ namespace Labb2Xamarin
 		{
 			base.OnCreate (savedInstanceState);
 			SetContentView (Resource.Layout.AllEntries);
-			Console.WriteLine ("inne i OnCreate");
 			bkManager = BookkeeperManager.GetInstance ();
 			listViewAllEntries = FindViewById<ListView> (Resource.Id.listViewAllEntries);
 			myAdapter = new MyAdapter (this, bkManager.getEntries ());
 			listViewAllEntries.Adapter = myAdapter;
-
-
 		}
 	}
 }

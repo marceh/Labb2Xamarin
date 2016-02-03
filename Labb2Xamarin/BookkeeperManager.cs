@@ -10,7 +10,10 @@ using System.Runtime.InteropServices;
 using Android.Util;
 using Javax.Xml.Transform.Sax;
 using Android.Net;
-using Android.App;
+using Android.Content.Res;
+using Labb2Xamarin;
+
+
 
 namespace Labb2Xamarin
 {
@@ -37,15 +40,10 @@ namespace Labb2Xamarin
 			taxRates = new List<String>();
 			entries = new List<Entry>();
 
-			Console.WriteLine ("inne i construktor för BKMANAGER");
 			//If the database is empty we fill it with account and taxrates...
 			try {
 				db.Table<Account> ().Count ();
-				Console.WriteLine ("db.Table<Account> ().Count ():    "+db.Table<Account> ().Count ());
-				Console.WriteLine ("db.Table<TaxRate> ().Count ():    "+db.Table<TaxRate> ().Count ());
-				Console.WriteLine ("db.Table<Entry> ().Count ():    "+db.Table<Entry> ().Count ());
 			} catch (SQLiteException e) {
-				Console.WriteLine ("inne i Exception");
 				db.CreateTable<Entry> ();
 				db.CreateTable<Account> ();
 				db.CreateTable<TaxRate> ();
@@ -104,7 +102,6 @@ namespace Labb2Xamarin
 		public void AddEntry(Entry entry)
 		{
 			db.Insert (entry);
-			//entries.Add(entry);
 		}
 
 		/*
@@ -121,31 +118,55 @@ namespace Labb2Xamarin
 		 * 
 		 */
 
+		/// <summary>
+		/// Gets the income accounts.
+		/// </summary>
+		/// <returns>The income accounts.</returns>
 		public List<Account> getIncomeAccounts()
 		{
 			return db.Table<Account> ().Where (x => x.Number >= 3000 && x.Number <= 3999).ToList (); ;
 		}
 
+		/// <summary>
+		/// Gets the expense accounts.
+		/// </summary>
+		/// <returns>The expense accounts.</returns>
 		public List<Account> getExpenseAccounts()
 		{
 			return db.Table<Account> ().Where (x => x.Number >= 4000 && x.Number <= 7999).ToList ();
 		}
 
+		/// <summary>
+		/// Gets the money accounts.
+		/// </summary>
+		/// <returns>The money accounts.</returns>
 		public List<Account> getMoneyAccounts()
 		{
 			return db.Table<Account> ().Where (x => x.Number >= 1000 && x.Number <= 1999).ToList ();
 		}
 
+		/// <summary>
+		/// Gets the tax rates.
+		/// </summary>
+		/// <returns>The tax rates.</returns>
 		public List<TaxRate> getTaxRates()
 		{
 			return db.Table<TaxRate> ().ToList ();
 		}
 
+		/// <summary>
+		/// Gets the entries.
+		/// </summary>
+		/// <returns>The entries.</returns>
 		public List<Entry> getEntries()
 		{
 			return db.Table<Entry>().ToList();
 		}
 
+		/// <summary>
+		/// Returns a good sentance over the entries.
+		/// </summary>
+		/// <returns> Returns a good sentance over the entries</returns>
 		public override string ToString()
 		{
 			string tempString = "";
@@ -162,21 +183,18 @@ namespace Labb2Xamarin
 		/// </summary>
 		private void CreateTheAccountTable ()
 		{
-
-			Console.WriteLine ("inne i Create AccountTable");
 			List<Account> tempList = new List<Account>
 			{
-				new Account() {Name="Sales", Number=3000},
-				new Account() {Name="Securities, yield", Number=3670},
-				new Account() {Name="Goods purchases", Number=4000},
-				new Account() {Name="Office supplies", Number=6010},
-				new Account() {Name="Salaries", Number=7010},
-				new Account() {Name="Bank account", Number=1930},
-				new Account() {Name="Cash", Number=1910}
+				new Account() {Name=""+Resource.String.Sales, Number=3000},
+				new Account() {Name=""+Resource.String.Securities_yield, Number=3670},
+				new Account() {Name=""+Resource.String.Goods_purchases, Number=4000},
+				new Account() {Name=""+Resource.String.Office_supplies, Number=6010},
+				new Account() {Name=""+Resource.String.Salaries, Number=7010},
+				new Account() {Name=""+Resource.String.Bank_account, Number=1930},
+				new Account() {Name=""+Resource.String.Cash, Number=1910}
 			};
 
 			foreach (Account x in tempList) {
-				Console.WriteLine ("element i templist: "+x.ToString ());
 				db.Insert (x);
 			}
 		}
@@ -188,13 +206,17 @@ namespace Labb2Xamarin
 		{
 			db.Insert (new TaxRate() {Id=6, Tax=0.06});
 			db.Insert (new TaxRate() {Id=12, Tax=0.12});
-			db.Insert ( new TaxRate() {Id=25, Tax=0.25});
+			db.Insert (new TaxRate() {Id=25, Tax=0.25});
 		}
 
+		/// <summary>
+		/// Sends the tax report by mail. the Mail text is fetched from the CreateTaxReportString method
+		/// </summary>
+		/// <param name="context">the context that sends the intent</param>
 		public void sendTaxReport(Context context)
 		{
 			var email = new Intent (Android.Content.Intent.ActionSend);
-			email.PutExtra (Android.Content.Intent.ExtraSubject, "Tax Report");
+			email.PutExtra (Android.Content.Intent.ExtraSubject, context.Resources.GetString (Resource.String.Tax_report));
 			email.PutExtra (Android.Content.Intent.ExtraText, CreateTaxReportString ());
 			email.SetType ("message/rfc822");
 			context.StartActivity (email);
@@ -215,7 +237,6 @@ namespace Labb2Xamarin
 				}
 			}
 			tempString += "Total amount to pay: $" + tempDouble;
-			Console.WriteLine (tempString);
 			return tempString;
 		}
 

@@ -1220,6 +1220,12 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0b000e
 			public const int All_Entries = 2131427342;
 			
+			// aapt resource value: 0x7f0b0028
+			public const int Bank_account = 2131427368;
+			
+			// aapt resource value: 0x7f0b0029
+			public const int Cash = 2131427369;
+			
 			// aapt resource value: 0x7f0b001b
 			public const int Choose_money_account = 2131427355;
 			
@@ -1238,6 +1244,9 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0b0015
 			public const int Description = 2131427349;
 			
+			// aapt resource value: 0x7f0b0025
+			public const int Goods_purchases = 2131427365;
+			
 			// aapt resource value: 0x7f0b0012
 			public const int Income = 2131427346;
 			
@@ -1247,11 +1256,26 @@ namespace Labb2Xamarin
 			// aapt resource value: 0x7f0b000d
 			public const int New_Entry = 2131427341;
 			
+			// aapt resource value: 0x7f0b0026
+			public const int Office_supplies = 2131427366;
+			
+			// aapt resource value: 0x7f0b0027
+			public const int Salaries = 2131427367;
+			
+			// aapt resource value: 0x7f0b0023
+			public const int Sales = 2131427363;
+			
+			// aapt resource value: 0x7f0b0024
+			public const int Securities_yield = 2131427364;
+			
 			// aapt resource value: 0x7f0b0013
 			public const int Spending = 2131427347;
 			
 			// aapt resource value: 0x7f0b0019
 			public const int Tax = 2131427353;
+			
+			// aapt resource value: 0x7f0b002a
+			public const int Tax_report = 2131427370;
 			
 			// aapt resource value: 0x7f0b0011
 			public const int This_is_where_you_add = 2131427345;
@@ -1261,6 +1285,9 @@ namespace Labb2Xamarin
 			
 			// aapt resource value: 0x7f0b0018
 			public const int Total_amount = 2131427352;
+			
+			// aapt resource value: 0x7f0b002b
+			public const int Total_amount_to_pay = 2131427371;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int Type = 2131427350;
@@ -1312,6 +1339,12 @@ namespace Labb2Xamarin
 			
 			// aapt resource value: 0x7f0b0020
 			public const int currency = 2131427360;
+			
+			// aapt resource value: 0x7f0b0022
+			public const int entry_created = 2131427362;
+			
+			// aapt resource value: 0x7f0b0021
+			public const int input_fields_cannot_be_empty = 2131427361;
 			
 			static String()
 			{

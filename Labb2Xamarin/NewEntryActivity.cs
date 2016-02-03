@@ -90,20 +90,29 @@ namespace Labb2Xamarin
 
 		private void CreateEntry()
 		{
-			Entry createdEntry = new Entry (/*TheIncome (), TheDate (), TheDescription (), TheTotalAmount (), TheAccount("type"), TheAccount("money"), TheTaxRate ()*/);
-			createdEntry.IsIncome = TheIncome ();
-			createdEntry.Date = TheDate ();
-			createdEntry.Description = TheDescription ();
-			createdEntry.TotalAmount = TheTotalAmount ();
-			createdEntry.TypeAccount = TheAccount ("type");
-			createdEntry.MoneyAccount = TheAccount ("money");
-			createdEntry.TaxRate = TheTaxRate ();
+			if (editTextDate.Text.Equals ("") || editTextDesc.Text.Equals ("") || editTextTotal.Text.Equals ("")) {
+				Toast.MakeText (this, Resource.String.input_fields_cannot_be_empty, ToastLength.Short).Show ();  
+			} else {
+				Entry createdEntry = new Entry ();
+				createdEntry.IsIncome = TheIncome ();
+				createdEntry.Date = TheDate ();
+				createdEntry.Description = TheDescription ();
+				createdEntry.TotalAmount = TheTotalAmount ();
+				createdEntry.TypeAccount = TheAccount ("type");
+				createdEntry.MoneyAccount = TheAccount ("money");
+				createdEntry.TaxRate = TheTaxRate ();
 
-			Toast.MakeText (this, "Entry created!", ToastLength.Short).Show ();
-			Console.WriteLine (createdEntry.ToString ());   
-			bkManager.AddEntry (createdEntry);
-			Console.WriteLine (bkManager.ToString ());
-			//TODO ResetMenu ();
+				Toast.MakeText (this, Resource.String.entry_created, ToastLength.Short).Show ();  
+				bkManager.AddEntry (createdEntry);
+				ClearTextFields ();
+			}
+		}
+
+		private void ClearTextFields()
+		{
+			editTextDate.Text = "";
+			editTextDesc.Text = "";
+			editTextTotal.Text = "";
 		}
 
 		private bool TheIncome()

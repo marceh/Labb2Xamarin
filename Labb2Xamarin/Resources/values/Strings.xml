@@ -20,5 +20,28 @@
 	<string name="Info_all_entries">All entries are displayed beneath</string>
 	<string name="create_tax_report">Create tax report</string>
 	<string name="currency">kr</string>
+	<string name="input_fields_cannot_be_empty">Input fields cannot be empty</string>
+	<string name="entry_created">Entry created!</string>
+	<string name="Sales">Sales</string>
+	<string name="Securities_yield">Securities, yield</string>
+	<string name="Goods_purchases">Goods purchases</string>
+	<string name="Office_supplies">Office supplies</string>
+	<string name="Salaries">Salaries</string>
+	<string name="Bank_account">Bank account</string>
+	<string name="Cash">Cash</string>
+
+
+	<string name="Tax_report">Tax report</string>
+	<string name="Total_amount_to_pay">"Total amount to pay: $"</string>
+	<string name="entry_created">Entry created!</string>
+	<string name="entry_created">Entry created!</string>
+	<string name="entry_created">Entry created!</string>
+	<string name="entry_created">Entry created!</string>
+
+
+
+
+
+
 
 </resources>
